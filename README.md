@@ -13,7 +13,7 @@ Este é um projeto simples que utiliza Flutter e Dart para calcular o somatório
 1. Clone ou faça o download deste repositório.
 
    ```bash
-   git clone 
+   git clone https://github.com/anaGomide/escribo.git
 
 
 2. Abra o projeto no seu editor de código.
