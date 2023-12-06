@@ -43,10 +43,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final deviceSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: Text('Somatório de Divisíveis'),
         centerTitle: true,
+        backgroundColor: const Color(0xFFD0ABFF),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -59,6 +61,11 @@ class _MyHomePageState extends State<MyHomePage> {
               decoration: InputDecoration(
                 labelText: 'Digite um número',
                 fillColor: Colors.white,
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide:
+                      BorderSide(color: const Color(0xFFD0ABFF), width: 2),
+                ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),
                   borderSide: const BorderSide(),
@@ -70,21 +77,23 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 calcularSomatorio();
               },
-              child: Text('Calcular'),
+              style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.white,
+                minimumSize: Size(deviceSize.width * 0.9, 54),
+                backgroundColor: const Color(0xFFD0ABFF),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+              child: Text(
+                'Calcular',
+              ),
             ),
             SizedBox(height: 20),
             Text(
               'Resultado: $resultado',
               style: TextStyle(
                 fontSize: 18,
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.white,
-                  minimumSize: Size(deviceSize.width * 0.9, 54),
-                  backgroundColor: const Color(0xFFD0ABFF),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                ),
               ),
             ),
           ],
